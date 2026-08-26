@@ -1,22 +1,28 @@
-## ✈️ Minería de Datos Financieros con Wikipedia API
+# ✈️ Pipeline ETL: Minería de Datos Financieros con Wikipedia API
 
-## 📌 ¿Para qué sirve este proyecto?
-Este script automatiza la recopilación de datos de la industria aerocomercial. En lugar de leer manualmente decenas de artículos de Wikipedia para buscar métricas financieras de la competencia, este programa descarga el texto completo, lo limpia y extrae automáticamente cifras clave (como ingresos, inversiones, tamaño de flota y volumen de pasajeros).
+Proyecto de *Data Mining* e Inteligencia de Mercado orientado a la recopilación y estructuración automatizada de información pública de la industria aerocomercial.
 
-## ⚙️ ¿Cómo funciona?
-Extracción Automática: Se conecta a la API de Wikipedia para descargar la historia de aerolíneas competidoras.
+Este sistema utiliza la API de Wikipedia para obtener información de diferentes aerolíneas, procesa el contenido mediante Expresiones Regulares (Regex) y almacena las métricas encontradas en una base de datos SQLite.
 
-Limpieza de Datos (Regex): Analiza el texto desordenado y busca patrones específicos asociados a dinero o métricas operativas.
+**Objetivo del Proyecto:** Transformar grandes volúmenes de información no estructurada en un dataset organizado y reutilizable para análisis financiero, comparación de competidores (benchmarking) y elaboración de dashboards.
 
-Análisis SQL: Carga la información extraída en una base de datos relacional (SQLite) para contabilizar qué aerolínea tiene mayor exposición de datos públicos.
+## ⚙️ Arquitectura y Flujo de Trabajo
 
-Exportación a Excel: Genera un dataset estructurado listo para ser consumido en Dashboards de Inteligencia de Mercado.
+* **1. Extracción Automática:** Se conecta a la API de Wikipedia para descargar la historia de las aerolíneas competidoras.
+* **2. Limpieza de Datos (Regex):** Analiza el texto desordenado y busca patrones específicos asociados a dinero o métricas operativas (pasajeros, ingresos, flota).
+* **3. Análisis Relacional (SQL):** Carga la información extraída en una base de datos relacional (`SQLite`) para ejecutar consultas que contabilizan qué aerolínea tiene mayor exposición de datos públicos.
+* **4. Exportación a Excel:** Genera un dataset estructurado (archivos `.xlsx` y `.csv`) listo para ser consumido en Dashboards de Inteligencia de Mercado.
 
- ## 🛠️ Stack Tecnológico
-Python (Pandas): Manipulación de datos.
+## 🛠️ Stack Tecnológico
 
-SQL (SQLite): Consultas relacionales.
+* **Python (Pandas):** Para la limpieza, transformación y manipulación de datos.
+* **SQL (SQLite):** Para el almacenamiento temporal y consultas relacionales.
+* **Wikipedia-API:** Para la conexión y consumo de fuentes externas.
+* **Expresiones Regulares (re):** Para la minería de texto avanzada.
+* **Matplotlib:** Para la generación automática de visualizaciones de datos.
 
-Wikipedia-API: Conexión a fuentes externas.
+## 📂 Archivos del Repositorio
 
-Matplotlib: Visualización de datos.
+* `*.ipynb`: Cuaderno de código fuente ejecutable.
+* `dataset_estructurado_wikipedia.xlsx` y `.csv`: Datasets resultantes limpios y estructurados.
+* `analisis_competitivo_wikipedia.png`: Visualización generada automáticamente por el script.
